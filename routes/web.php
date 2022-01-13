@@ -1,11 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AdvertisementController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\DisplayController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\AdvertisementController;
 use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\DisplayController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,5 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 Route::get('/advertisement', [AdvertisementController::class, 'index'])->name('advertisement');
 Route::post('/advertisement', [AdvertisementController::class, 'store']);
+
+Route::get('/details/{advertisement}', [ItemController::class, 'index'])->name('details');
