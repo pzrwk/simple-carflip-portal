@@ -32,4 +32,8 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/advertisement', [AdvertisementController::class, 'index'])->name('advertisement');
 Route::post('/advertisement', [AdvertisementController::class, 'store']);
 
+Route::get('/update/{advertisement}/edit', [AdvertisementController::class, 'display'])->name('display');
+Route::put('/update/{advertisement}', [AdvertisementController::class, 'update'])->name('update');
+Route::delete('/update/{advertisement}/delete', [AdvertisementController::class, 'destroy'])->name('delete');
+
 Route::get('/details/{advertisement}', [ItemController::class, 'index'])->name('details');

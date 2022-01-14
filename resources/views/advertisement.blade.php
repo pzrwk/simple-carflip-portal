@@ -1,4 +1,7 @@
 @extends('layouts.app')
+<head>
+  <title>Car Flipper - Nowe ogłoszenie</title>
+</head>
 @section('content')
 <div class="container-fluid w-50 bg-light p-4 mt-4">
   <h3 class="text-center">Create new advertisement</h3>
@@ -17,7 +20,14 @@
 
     <div class="mb-3">
       <label for="category" class="form-label">Category</label>
-      <input type="text" class="form-control @error('category')border border-danger @enderror" id="category" name="category" value="">
+      <select class="form-select @error('category')border border-danger @enderror" id="category" name="category">
+        <option selected>No category selected</option>
+        <option value="Cars">Cars</option>
+        <option value="Tractors">Tractors</option>
+        <option value="Trucks">Trucks</option>
+        <option value="Electronics">Electronics</option>
+        <option value="Pets">Pets</option>
+      </select>
 
       @error('category')
         <div class="text-danger mt-2">
